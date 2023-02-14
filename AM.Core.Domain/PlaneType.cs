@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace AM.Core.Domain
 {
-    enum PlaneType
+    public enum PlaneType
     {
-        BOING,AIBUS
+        BOING=1,AIBUS=2
     }
 }

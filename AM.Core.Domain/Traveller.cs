@@ -16,7 +16,7 @@ namespace AM.Core.Domain
                 + "HealthInformation:" + HealthInformation + ";"
                 + "Nationality:" + Nationality;
         }
-
+        //question 12 Polymorphisme par héritage
         public override string GetPassengerType()
         {
             return "I am a Traveller";

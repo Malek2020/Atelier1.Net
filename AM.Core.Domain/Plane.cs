@@ -15,9 +15,13 @@ namespace AM.Core.Domain
         public IList<Flight> Flights { get; set; }
 
         //TP1 Question 8   (constructeur) 
+        public Plane()
+        {
+
+        }
         public Plane(PlaneType pt, int capacity, DateTime date)
         {
-            this.Capacity = capacity;// on peut utiliser this. ou sans this (pour distinguer les noms)
+            Capacity = capacity;// on peut utiliser  this.Capacity = capacity; ou sans this (pour distinguer les noms)
             ManufactureDate = date;
             MyPlaneType = pt;
         }
@@ -29,6 +33,7 @@ namespace AM.Core.Domain
                 + "PlaneId:" + PlaneId + ";"
                 + "PlaneType:" + MyPlaneType;
         }
+
         
     }
 }
