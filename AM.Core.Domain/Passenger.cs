@@ -8,13 +8,18 @@ namespace AM.Core.Domain
 {
     public class Passenger
     {
-        public DateTime BirthDate { get; set; }
+        public DateTime BirthDate {
+            get { return BirthDate; }
+            set { BirthDate = value; }
+        }
         public string PassportNumber { get; set; }
         public string EmailAddress { get; set;}
         public string FirstName { get; set;}
         public string LastName { get; set;}
         public string TelNumber { get; set; }
         public IList<Flight> Flights { get;set; }
+        public int Age; 
+
         public override string ToString()
         {
             return "BirthDate:" + BirthDate + ";"
@@ -57,6 +62,46 @@ namespace AM.Core.Domain
         {
             return "I am a passenger";
         }
-            
+        //Question 13
+        public void GetAge(DateTime birthDate, out int calculatedAge)
+        {
+            DateTime now = DateTime.Now;
+            int age = now.Year - birthDate.Year;
+
+            if (now < birthDate.AddYears(age))
+            {
+                age--;
+            }
+
+            calculatedAge = age;
+        }
+
+        // Autres propriétés et méthodes de la classe Passenger
+        public void GetAge1(Passenger aPassenger)
+        {
+            DateTime now = DateTime.Now;
+            int age = now.Year - aPassenger.BirthDate.Year;
+
+            if (now < BirthDate.AddYears(age))
+            {
+                age--;
+            }
+
+            aPassenger.Age = age;
+        }
+
+        public void GetAge2(DateTime birthDate, ref int calculatedAge)
+        {
+            DateTime now = DateTime.Now;
+            int age = now.Year - birthDate.Year;
+
+            if (now < birthDate.AddYears(age))
+            {
+                age--;
+            }
+
+            calculatedAge = age;
+        }
     }
+
 }
